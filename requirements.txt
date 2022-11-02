@@ -7,3 +7,4 @@ gunicorn
 nltk
 wordcloud
 Werkzeug==2.0.3
+gunicorn

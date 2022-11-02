@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+    <meta charset="UTF-8">
+    <title>ML Deployment using Heroku</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <div class="prediction">
+        <h1>seek job</h1>
+        <form action="{{ url_for('predict')}}"method="post">
+		<br>
+    		<label for="title">Title</label>
+    		<select id="title" name="title" required="required">
+      			<option value="Data Scientist">Data Scientist</option>
+      			<option value="Machine Learning Engineer">Machine Learning Engineer</option>
+      			<option value="Data Engineer">Data Engineer</option>
+      			<option value="Senior Data Engineer">Senior Data Engineer</option>
+      			<option value="Principal Data Engineer - Data & Analytics">Principal Data Engineer - Data & Analytics</option>
+      			<option value="Junior Machine Learning Engineer">Junior Machine Learning Engineer </option>
+      			<option value="Principle Data Scientist">Principle Data Scientist</option>
+      			<option value="Engineer- Big Data Technologies">Engineer- Big Data Technologies</option>
+				<option value="Data Scientist (Knowledge Graph)">Data Scientist (Knowledge Graph)</option>
+      			<option value="Data Engineer - Python (High Frequency Trading)">Data Engineer - Python (High Frequency Trading)</option>
+      			<option value="Senior AI Systems Engineer">Senior AI Systems Engineer</option>
+      			<option value="Machine Learning Lead">Machine Learning Lead</option>
+      			<option value="Senior Data Scientist">Senior Data Scientist</option>
+      			<option value="AI Engineer">AI Engineer </option>
+      			<option value="Analytics Engineer">Analytics Engineer</option>
+      			<option value="Principal Data Consultant">Principal Data Consultant</option>
+				  <option value="Data Engineers - Big Data ">Data Engineers - Big Data </option>
+      			<option value="Senior Data Scientist - Macquarie Park/WfH">Senior Data Scientist - Macquarie Park/WfH </option>
+      			<option value="Senior Data Engineer/Machine Learning  ">Senior Data Engineer/Machine Learning  </option>
+      			<option value="Machine Learning Data Scientist ">Machine Learning Data Scientist </option>
+				  <option value="PhD Studentships in Automated and Transparent Machine Learning">PhD Studentships in Automated and Transparent Machine Learning</option>
+      			<option value="Data Scientist - Life and Investments  ">Data Scientist - Life and Investments  </option>
+      			<option value="Data Engineer | BIG W ">Data Engineer | BIG W </option>
+      			<option value="Data Scientist (AIPS - Recs)">Data Scientist (AIPS - Recs)</option>
+
+    		</select>
+    		<br>
+		<label for="company">company</label>
+    		<select id="company" name="company" required="required">
+      			<option value="Bluefin Resources Pty Limited">Bluefin Resources Pty Limited</option>
+      			<option value="Correlate Resources">Correlate Resources</option>
+		      	<option value="The Argyle Network">The Argyle Network</option>
+		      	<option value="ASIC">ASIC</option>
+				<option value="Westpac Group">Westpac Group</option>
+      			<option value="Pearson Australia">Pearson Australia</option>
+      			<option value="Talent Insights Group Pty Ltd">Talent Insights Group Pty Ltd</option>
+      			<option value="SEEK Limited">SEEK Limited </option>
+      			<option value="The Onset">The Onset</option>
+      			<option value="TheDriveGroup">TheDriveGroup </option>
+      			<option value="CatapultBI">CatapultBI </option>
+      			<option value="Intelligen Pty Ltd">Intelligen Pty Ltd</option>
+      			<option value="Charterhouse">Charterhouse</option>
+      			<option value="Susquehanna Pacific Pty Ltd">Susquehanna Pacific Pty Ltd</option>
+      			<option value="Aldi Stores">Aldi Stores</option>
+      			<option value="Big W">Big W </option>
+				  <option value="PRA">PRA</option>
+		      	<option value="Westbury Partners">Westbury Partners</option>
+				<option value="Versent Pty Ltd">Versent Pty Ltd</option>
+      			<option value="NewyTechPeople">NewyTechPeople</option>
+      			<option value="Precision Sourcing ">Precision Sourcing </option>
+      			<option value="SustainAbility Consulting ">SustainAbility Consulting  </option>
+      			<option value="Robert Walters ">Robert Walters </option>
+      			<option value="Alloc8">Alloc8</option>
+      			<option value="Laing O'Rourke Australia Construction Pty Limited">Laing O'Rourke Australia Construction Pty Limited</option>
+      			<option value="AC3 Pty Limited  ">AC3 Pty Limited  </option>
+      			<option value="CPB Contractors Pty Limited">CPB Contractors Pty Limited</option>
+      			<option value="University of Technology Sydney">University of Technology Sydney</option>
+      			<option value="Stockland">Stockland</option>
+      			<option value="Bet Technology">Bet Technology </option>
+				  <option value="Zurich Financial Services Australia">Zurich Financial Services Australia</option>
+      			<option value="EY ">EY </option>
+    		</select>
+    		<br>
+    		<label for="location">Location</label>
+    		<select id="location" name="location" required="required">
+      			<option value="Sydney NSW">Sydney NSW</option>
+      			<option value="Parliament House">Parliament House	</option>
+      			<option value="North Sydney">North Sydney</option>
+				<option value="North Shore & Northern Beaches">North Shore & Northern Beaches</option>
+				<option value="Minchinbury">Minchinbury</option>
+				<option value="Macquarie Park">Macquarie Park</option>
+				<option value="Bella Vista">Bella Vista</option>
+    		</select>
+    		<br>
+		<label for="Industry">Industry</label>
+    		<select id="Industry" name="Industry" required="required">
+      			<option value="Information & Communication Technology">Information & Communication Technology</option>
+      			<option value="Science & Technology">Science & Technology</option>
+      			<option value="Banking & Financial Services">Banking & Financial Services</option>
+      			<option value="Education & Training">Education & Training</option>
+      			<option value="Government & Defence">Government & Defence </option>
+      			<option value="Consulting & Strategy">Consulting & Strategy</option>
+      			
+    		</select>
+    		
+        	<button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        </form>
+
+       <br>
+       <b>{{ prediction_text }}</b>
+    </div>
+</body>
+</html>

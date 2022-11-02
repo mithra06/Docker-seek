@@ -1,0 +1,9 @@
+Flask==2.1.2
+sklearn
+pandas
+numpy
+matplotlib
+gunicorn
+nltk
+wordcloud
+Werkzeug==2.0.3
